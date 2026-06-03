@@ -34,7 +34,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+y' -Function Redo
 
 # Functions
 function Update-Profile {
-    Invoke-WebRequest -Uri https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $Profile
+    Invoke-WebRequest -Uri https://github.com/richardoberkofler/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $Profile
     Write-Host "Updated PowerShell Profile" -ForegroundColor Green
 }
 
@@ -42,7 +42,8 @@ function Update-Profile {
 function touch ($File) {
     if (Test-Path $File) {
         (Get-Item $File).LastWriteTime = Get-Date
-    } else {
+    }
+    else {
         New-Item $File -ItemType File | Out-Null
     }
 }
@@ -54,9 +55,10 @@ function mkcd ($Path) {
 
 function trash ($Path) {
     if (Test-Path $Path -PathType Container) {
-        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteDirectory($Path,'OnlyErrorDialogs','SendToRecycleBin')
-    } else {
-        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($Path,'OnlyErrorDialogs','SendToRecycleBin')
+        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteDirectory($Path, 'OnlyErrorDialogs', 'SendToRecycleBin')
+    }
+    else {
+        [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($Path, 'OnlyErrorDialogs', 'SendToRecycleBin')
     }
 }
 
@@ -140,13 +142,13 @@ Set-Alias -Name grep -Value Select-String
 
 # Help Function
 function Show-Help {
-    $title    = $PSStyle.Foreground.BrightMagenta
-    $section  = $PSStyle.Foreground.BrightBlue
-    $command  = $PSStyle.Foreground.BrightGreen
-    $desc     = $PSStyle.Foreground.BrightWhite
-    $accent   = $PSStyle.Foreground.BrightYellow
-    $dim      = $PSStyle.Foreground.BrightBlack
-    $reset    = $PSStyle.Reset
+    $title = $PSStyle.Foreground.BrightMagenta
+    $section = $PSStyle.Foreground.BrightBlue
+    $command = $PSStyle.Foreground.BrightGreen
+    $desc = $PSStyle.Foreground.BrightWhite
+    $accent = $PSStyle.Foreground.BrightYellow
+    $dim = $PSStyle.Foreground.BrightBlack
+    $reset = $PSStyle.Reset
 
     Write-Host @"
 ${title}󰘳 PowerShell Profile Help${reset}

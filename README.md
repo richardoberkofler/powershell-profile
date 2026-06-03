@@ -7,10 +7,11 @@ A clean, modern PowerShell profile designed to make Windows terminals feel fast,
 Run the following command in a PowerShell window:
 
 ```powershell
-irm https://github.com/ChrisTitusTech/powershell-profile/raw/main/setup.ps1 | iex
+irm https://github.com/richardoberkofler/powershell-profile/raw/main/setup.ps1 | iex
 ```
 
 ## After you run the installer
+
 - Reopen Windows Terminal
 - Go to Settings
 - Select your PowerShell profile
@@ -24,5 +25,5 @@ If you find this project useful:
 
 - Leave a star on GitHub
 - Share it with others
-- Consider sponsoring development:  
-  https://github.com/sponsors/ChrisTitusTech
+- Consider sponsoring development:
+  <https://github.com/sponsors/ChrisTitusTech>

@@ -7,14 +7,15 @@ if (-not ($Env:WT_SESSION)) {
 
 if (Test-Path $Profile) {
     Move-Item -Path $Profile -Destination ($Profile + ".bak") -Force
-} else {
+}
+else {
     New-Item -Path $Profile -Force | Out-Null
 }
 
 # Disable pwsh telemetry for funnzies :)
-[System.Environment]::SetEnvironmentVariable('POWERSHELL_TELEMETRY_OPTOUT','1','Machine')
+[System.Environment]::SetEnvironmentVariable('POWERSHELL_TELEMETRY_OPTOUT', '1', 'Machine')
 
-Invoke-WebRequest -Uri https://github.com/ChrisTitusTech/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $Profile
+Invoke-WebRequest -Uri https://github.com/richardoberkofler/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $Profile
 Invoke-WebRequest -Uri https://github.com/JanDeDobbeleer/oh-my-posh/raw/main/themes/cobalt2.omp.json -OutFile $Home\cobalt2.omp.json
 
 attrib +h $Home\cobalt2.omp.json
